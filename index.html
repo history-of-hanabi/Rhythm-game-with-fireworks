@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>花火を使ったリズムゲーム</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preload" href="assets/font.ttf" as="font" type="font/ttf" crossorigin>
+</head>
+<body>
+  <div id="game-container">
+    <header>
+      <h1>花火を使った<span class="hanabi">リズムゲーム</span></h1>
+    </header>
+    <main>
+      <section id="tutorial" class="modal">
+        <h2>遊び方</h2>
+        <p>
+          音楽に合わせて流れてくる音符や花火アイコンが<br>
+          判定ラインに重なったらタイミングよくタップしよう！<br>
+          上手くタイミングが合うと可愛い花火が打ち上がるよ♪
+        </p>
+        <ul>
+          <li><span class="perfect">Perfect!</span>：ぴったり！</li>
+          <li><span class="good">Good!</span>：まあまあ！</li>
+          <li><span class="miss">Miss...</span>：おしい！</li>
+        </ul>
+        <button id="close-tutorial">OK！</button>
+      </section>
+
+      <section id="menu">
+        <label for="bgm-select">BGMを選んでね：</label>
+        <select id="bgm-select">
+          <option value="assets/bgm1.mp3">はなびのうた</option>
+          <option value="assets/bgm2.mp3">なつまつりメロディ</option>
+        </select>
+        <button id="start-btn">スタート！</button>
+        <button id="howto-btn">遊び方</button>
+      </section>
+
+      <section id="game" class="hidden">
+        <div id="score-board">
+          <span>スコア：<span id="score">0</span></span>
+          <span>コンボ：<span id="combo">0</span></span>
+        </div>
+        <div id="note-area">
+          <canvas id="note-canvas" width="360" height="480"></canvas>
+          <div id="judgement"></div>
+        </div>
+        <div id="touch-area">
+          <div id="judge-line"></div>
+        </div>
+      </section>
+
+      <section id="result" class="modal hidden">
+        <h2>結果発表！</h2>
+        <p>スコア：<span id="final-score"></span></p>
+        <p>最大コンボ：<span id="final-combo"></span></p>
+        <button id="retry-btn">もう一度！</button>
+        <button id="back-btn">メニューへ</button>
+      </section>
+    </main>
+  </div>
+  <audio id="bgm" preload="auto"></audio>
+  <audio id="se-tap" src="assets/tap.mp3" preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
