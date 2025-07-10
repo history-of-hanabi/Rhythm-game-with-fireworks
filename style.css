@@ -70,3 +70,19 @@ button:focus-visible {
   flex-direction: column;
   overflow: hidden;
 }
+/* ボタンが必ず押せるようにするお守りCSS */
+button {
+  pointer-events: auto !important;
+  z-index: 10 !important;
+  position: relative;
+}
+
+/* 判定表示やモーダルがボタンを邪魔しないように */
+#judgement {
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.modal.hidden {
+  display: none !important;
+}
