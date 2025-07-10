@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru:wght@700&display=swap');
+
+/* 全体の基本フォントと色 */
+body {
+  font-family: 'Kosugi Maru', 'Meiryo', sans-serif;
+  color: #222;
+  background: #fff7fb;
+}
+
+/* 判定表示（PERFECT, GOOD, ミス）をシンプル＆見やすく */
+#judgement {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  font-size: 2.2em;
+  font-family: 'Kosugi Maru', 'Meiryo', sans-serif;
+  font-weight: bold;
+  color: #222;
+  background: #fff;
+  padding: 0.2em 0.8em;
+  border-radius: 0.5em;
+  box-shadow: 0 2px 8px #e0e0e0;
+  text-shadow: none !important;
+  pointer-events: none;
+  z-index: 10;
+  letter-spacing: 0.05em;
+}
+
+/* 判定ごとの色や装飾を完全になしに */
+.perfect, .good, .miss {
+  color: #222 !important;
+  background: none !important;
+  font-weight: bold;
+  text-shadow: none !important;
+}
+
+/* ボタンなど他の要素の装飾例（必要に応じて） */
+button {
+  font-family: 'Kosugi Maru', 'Meiryo', sans-serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  background: #ffb7b2;
+  color: #fff;
+  border: none;
+  border-radius: 1.5em;
+  padding: 0.8em 2em;
+  margin: 0.5em 0;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #ffd6e0;
+  transition: background 0.2s;
+}
+button:active,
+button:focus-visible {
+  background: #ff7eb9;
+  color: #fff;
+  outline: 3px solid #ff7eb9;
+  outline-offset: 2px;
+}
+
+/* そのほかの必要な最低限のレイアウト例 */
+#game-container {
+  max-width: 430px;
+  margin: 0 auto;
+  background: #fff7fb;
+  border-radius: 24px;
+  box-shadow: 0 2px 8px #fff0f8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
